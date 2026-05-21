@@ -1,0 +1,164 @@
+/* Обёртка основного контента */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    gap: 32px;
+}
+
+/* Карточка входа */
+.login-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 20px;
+    padding: 0;
+    width: 100%;
+    max-width: 450px;
+    min-height: 416px;
+    box-shadow: 0px 2px 24px 0px rgba(127, 34, 85, 0.02);
+    box-sizing: border-box;
+}
+
+.login-card__inner {
+    padding: 32px;
+}
+
+.login-title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    color: #1E222E;
+    text-align: center;
+    margin: 0 0 32px;
+}
+
+/* --- Стилизация полей ввода (fieldset/label) --- */
+/* Обёртка для каждого поля */
+.input-wrapper {
+    position: relative;
+    border: 1px solid #CDCFDE;
+    border-radius: 8px;
+    height: 44px;
+    background: #fff;
+    /* Важно для перекрытия рамки */
+    margin-bottom: 20px;
+}
+
+.input-wrapper:focus-within {
+    border-color: #0046bb;
+    /* Активный синий цвет ГПБ */
+}
+
+/* Поле ввода */
+.input-wrapper input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    /* Отступ справа под иконку */
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    box-sizing: border-box;
+    background: transparent;
+}
+
+.input-wrapper input::placeholder {
+    color: #c2c8d1;
+}
+
+/* Лейбл на рамке */
+.input-label {
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    /* Сдвиг на половину высоты лейбла */
+    left: 16px;
+    background: #fff;
+    /* Перекрывает линию рамки */
+    padding: 0 4px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #8F939F;
+    pointer-events: none;
+    /* Клик проходит сквозь текст в input */
+    user-select: none;
+    white-space: nowrap;
+}
+
+
+/* Иконки внутри полей */
+.input-icon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #8F939F;
+}
+
+
+.forgot-link {
+    display: block;
+    text-align: center;
+    color: #1E222E;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+/* Блок ЭТП внутри карточки */
+.etp-section {
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #6e7581;
+    background: linear-gradient(90deg, #F5F6FA 0%, #F7F1F7 51.5%, #F5F7FD 100%);
+    margin-top: auto;
+    /* Прижимает к низу */
+    flex-shrink: 0;
+    border-radius: 0 0 20px 20px;
+    /* Скругление только снизу */
+}
+
+.etp-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #1d1d1f;
+    text-decoration: none;
+    font-weight: 500;
+
+}
+
+.etp-link:hover {
+    text-decoration: underline;
+}
+
+/* Ссылка регистрации под карточкой */
+.register-link {
+    color: #476BF0;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    display: block;
+    text-align: center;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}

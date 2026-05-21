@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Вход - Газпромбанк Бизнес-Онлайн</title>
+</head>
+
+<body>
+  <header class="header container">
+    <div class="logo-icon">
+      <a class="logo-img" href="#">
+        <img src="images/logo-head.png" width="202" height="50" alt="Газпромбанк">
+      </a>
+    </div>
+
+    <div class="award-badge">
+      <!-- Текстовый блок -->
+      <div class="award-text">
+        <span class="award-text__top">Топ-3 лучших банков для корпоративных клиентов</span>
+        <span class="award-text__version">По версии Markswebb</span>
+      </div>
+
+      <!-- Иконка награда -->
+      <div class="award-icon">
+        <svg class="icon-reward" width="24" height="24" aria-hidden="true">
+          <use xlink:href="images/sprite.svg#icon-reward"></use>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-content">
+
+    <div class="login-card">
+      <div class="login-card__inner">
+        <h1 class="login-title">Вход в ГПБ Бизнес-онлайн</h1>
+
+        <form class="login-form" action="#" method="POST">
+          <!-- Логин -->
+          <div class="input-group">
+            <div class="input-wrapper">
+              <label for="login" class="input-label">Логин</label>
+              <input type="text" id="login" name="login" autocomplete="username" required>
+              <svg class="input-icon" width="24" height="24" aria-hidden="true">
+                <use xlink:href="images/sprite.svg#account-icon"></use>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Пароль -->
+          <div class="input-group">
+            <div class="input-wrapper">
+              <label for="password" class="input-label">Пароль</label>
+              <input type="password" id="password" name="password" autocomplete="current-password" required>
+              <svg class="input-icon" width="24" height="24" aria-hidden="true">
+                <use xlink:href="images/sprite.svg#eye-closed-icon"></use>
+              </svg>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary">Войти</button>
+          <a href="#" class="forgot-link">Забыли логин или пароль?</a>
+        </form>
+      </div>
+
+      <!-- Блок ЭТП внутри той же карточки -->
+      <div class="etp-section">
+        <span>Войти с помощью:</span>
+        <a href="#" class="etp-link">
+          <svg class="etp-icon" width="20" height="20" aria-hidden="true">
+            <use xlink:href="images/sprite.svg#etp-icon"></use>
+          </svg>
+          ЭТП ГПБ
+        </a>
+      </div>
+
+    </div>
+    <a href="#" class="register-link">Зарегистрироваться</a>
+  </main>
+
+  <footer class="footer container">
+    <div class="footer__left">
+      <div class="footer__contacts">
+        <a class="footer__contact-link" href="tel:88001001189">
+          <svg class="footer__icon" width="20" height="20" aria-hidden="true">
+            <use xlink:href="images/sprite.svg#phone-icon"></use>
+          </svg>
+          <span>8 800 100 11 89</span>
+        </a>
+
+        <a class="footer__contact-link" href="#">
+          <svg class="footer__icon" width="20" height="20" aria-hidden="true">
+            <use xlink:href="images/sprite.svg#tlg-icon"></use>
+          </svg>
+          <span>Написать в Telegram</span>
+        </a>
+      </div>
+
+      <div class="footer__legal">
+        <span class="footer__copyright">&copy;&nbsp;2024 Банк ГПБ (АО) Генеральная лицензия Банка России
+          &#8470;&nbsp;354</span>
+        <a href="#" class="footer__link">Политика обработки персональных данных</a>
+      </div>
+    </div>
+
+    <button class="footer__theme-toggle"  type="button" aria-label="Переключить тему">
+      <span class="footer__theme-text">Светлая тема</span>
+      <svg class="footer__theme-icon" width="20" height="20" aria-hidden="true">
+        <use xlink:href="images/sprite.svg#theme-icon"></use>
+      </svg>
+    </button>
+  </footer>
+
+</body>
+
+</html>

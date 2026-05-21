@@ -1,0 +1,46 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+}
+
+.award-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    /* Отступ между текстом и иконкой */
+}
+
+.award-text {
+    display: flex;
+    flex-direction: column;
+    /* Строки текста одна под другой */
+    text-align: right;
+    gap: 2px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.award-text__top {
+    color: #777B87;
+}
+
+.award-text__version {
+    color: #A8ACB7;
+}
+
+
+.award-icon {
+    flex-shrink: 0;
+    /* Чтобы иконка не сжималась */
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
