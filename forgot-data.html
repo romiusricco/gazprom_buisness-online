@@ -11,88 +11,90 @@
 </head>
 
 <body>
-  <header class="header container">
-    <div class="logo-icon">
-      <a class="logo-img" href="#">
-        <img src="images/logo-head.png" width="202" height="50" alt="Газпромбанк">
-      </a>
-    </div>
-
-    <div class="award-badge">
-      <!-- Текстовый блок -->
-      <div class="award-text">
-        <span class="award-text__top">Топ-3 лучших банков для корпоративных клиентов</span>
-        <span class="award-text__version">По версии Markswebb</span>
+  <header class="container">
+    <div class="header">
+      <div class="header__logo">
+        <a class="header__logo-link" href="#">
+          <img class="header__logo-img" src="images/logo-head.png" width="202" height="50" alt="Газпромбанк">
+        </a>
       </div>
-
-      <!-- Иконка награда -->
-      <div class="award-icon">
-        <svg class="icon-reward" width="24" height="24" aria-hidden="true">
-          <use xlink:href="images/sprite.svg#icon-reward"></use>
-        </svg>
+  
+      <div class="header__award">
+        <div class="header__award-text">
+          <span class="header__award-text">Топ-3 лучших банков для корпоративных клиентов</span>
+          <span class="header__award-text-sub">По версии Markswebb</span>
+        </div>
+        <div class="header__award-icon">
+          <svg class="header__award-icon-svg" width="24" height="24" aria-hidden="true">
+            <use xlink:href="images/sprite.svg#icon-reward"></use>
+          </svg>
+        </div>
       </div>
     </div>
   </header>
-  <main class="container main-content">
+  
+  <main class="container recovery-page">
     <div class="recovery-card">
-      <h1 class="recovery-title">Не можете войти?</h1>
+      <h1 class="recovery-card__title">Не можете войти?</h1>
 
-      <form class="recovery-form" action="#" method="POST">
-        <fieldset class="recovery-options">
+      <form class="recovery-card__form" action="#" method="POST">
+        <fieldset class="recovery-card__options">
           <legend class="visually-hidden">Выберите способ восстановления доступа</legend>
 
-          <label class="recovery-option">
+          <label class="recovery-card__option recovery-card__option--error">
             <input class="visually-hidden" type="radio" name="recovery-type" value="password" checked required>
-            <span class="recovery-option-text">Установить новый пароль</span>
+            <span class="recovery-card__option-text">Установить новый пароль</span>
           </label>
 
-          <label class="recovery-option">
+          <label class="recovery-card__option recovery-card__option--error">
             <input class="visually-hidden" type="radio" name="recovery-type" value="login">
-            <span class="recovery-option-text">Восстановить логин</span>
+            <span class="recovery-card__option-text">Восстановить логин</span>
           </label>
         </fieldset>
 
-        <button type="submit" class="btn-continue">Продолжить</button>
+        <button class="btn" type="submit" disabled>Продолжить</button>
       </form>
-      <a class="back-link" href="#" aria-label="Вернуться ко входу">
-        <svg class="back-icon" width="19" height="14" aria-hidden="true">
+      <button class="recovery-card__back-link" href="#" aria-label="Вернуться ко входу">
+        <svg class="recovery-card__back-icon" width="19" height="14" aria-hidden="true">
           <use xlink:href="images/sprite.svg#back-icon"></use>
         </svg>
-      </a>
+      </button>
     </div>
   </main>
 
-  <footer class="footer container">
-    <div class="footer__left">
-      <div class="footer__contacts">
-        <a class="footer__contact-link" href="tel:88001001189">
-          <svg class="footer__icon" width="20" height="20" aria-hidden="true">
-            <use xlink:href="images/sprite.svg#phone-icon"></use>
-          </svg>
-          <span>8 800 100 11 89</span>
-        </a>
-
-        <a class="footer__contact-link" href="#">
-          <svg class="footer__icon" width="20" height="20" aria-hidden="true">
-            <use xlink:href="images/sprite.svg#tlg-icon"></use>
-          </svg>
-          <span>Написать в Telegram</span>
-        </a>
+  <footer class="container">
+    <div class="footer">
+      <div class="footer__left">
+        <div class="footer__contacts">
+          <a class="footer__contact-link" href="tel:88001001189">
+            <svg class="footer__icon" width="20" height="20" aria-hidden="true">
+              <use xlink:href="images/sprite.svg#phone-icon"></use>
+            </svg>
+            <span>8 800 100 11 89</span>
+          </a>
+  
+          <a class="footer__contact-link" href="#">
+            <svg class="footer__icon" width="20" height="20" aria-hidden="true">
+              <use xlink:href="images/sprite.svg#tlg-icon"></use>
+            </svg>
+            <span>Написать в Telegram</span>
+          </a>
+        </div>
+  
+        <div class="footer__legal">
+          <span class="footer__copyright">&copy;&nbsp;2024 Банк ГПБ (АО) Генеральная лицензия Банка России
+            &#8470;&nbsp;354</span>
+          <a href="#" class="footer__link">Политика обработки персональных данных</a>
+        </div>
       </div>
-
-      <div class="footer__legal">
-        <span class="footer__copyright">&copy;&nbsp;2024 Банк ГПБ (АО) Генеральная лицензия Банка России
-          &#8470;&nbsp;354</span>
-        <a href="#" class="footer__link">Политика обработки персональных данных</a>
-      </div>
+  
+      <button class="footer__theme-toggle" type="button" aria-label="Переключить тему">
+        <span class="footer__theme-text">Светлая тема</span>
+        <svg class="footer__theme-icon" width="20" height="20" aria-hidden="true">
+          <use xlink:href="images/sprite.svg#theme-icon"></use>
+        </svg>
+      </button>
     </div>
-
-    <button class="footer__theme-toggle" type="button" aria-label="Переключить тему">
-      <span class="footer__theme-text">Светлая тема</span>
-      <svg class="footer__theme-icon" width="20" height="20" aria-hidden="true">
-        <use xlink:href="images/sprite.svg#theme-icon"></use>
-      </svg>
-    </button>
   </footer>
 </body>
 

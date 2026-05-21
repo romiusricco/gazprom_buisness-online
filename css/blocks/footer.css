@@ -27,6 +27,19 @@
     gap: 8px;
     text-decoration: none;
     white-space: nowrap;
+    user-select: none;
+}
+
+/* ======Иконки====== */
+/* SVG наследует цвет родителя */
+.footer__contact-link .footer__icon {
+    fill: currentColor;
+    flex-shrink: 0;
+}
+/*====================*/
+
+.footer__contact-link:hover {
+    color: #3356D7;
 }
 
 .footer__legal {
@@ -56,11 +69,6 @@
     color: #767A85;
 }
 
-/* Иконки */
-.footer__icon {
-    flex-shrink: 0;
-    color: #ADAFBA;
-}
 .footer__theme-icon {
     flex-shrink: 0;
     color: #767A85;

@@ -1,0 +1,140 @@
+
+/* =========================================
+   INPUT FIELDS 
+   ========================================= */
+/* --- Стилизация полей ввода (fieldset/label) --- */
+/* Обёртка для каждого поля */
+.field__wrapper {
+    position: relative;
+    border: 1px solid #CDCFDE;
+    border-radius: 8px;
+    height: 44px;
+    background: #fff;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.field__wrapper:focus-within,
+.field__wrapper:hover {
+    border-color: #3356D7;
+}
+
+.field__wrapper:focus-within .field__icon,
+.field__wrapper:hover .field__icon {
+    color: #3356D7;
+}
+
+/* Состояние ошибки */
+.field--error .field__wrapper {
+    border-color: #F9C4C2;
+    background: #FFFBFB;
+}
+
+.field--error .field__icon {
+    color: #F9C4C2;
+}
+
+/* Сообщение об ошибке */
+.field__error {
+    display: none;
+    margin-top: 8px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #F6514B;
+    padding: 0;
+}
+
+.field--error .field__error {
+    display: block;
+}
+
+/* Поле ввода */
+.field__wrapper input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    /* Отступ справа под иконку */
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #1E222E;
+    box-sizing: border-box;
+    background: transparent;
+}
+
+.field__wrapper input::placeholder {
+    color: #c2c8d1;
+}
+
+/* Лейбл на рамке */
+.field__label {
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    /* Сдвиг на половину высоты лейбла */
+    left: 16px;
+    background: #fff;
+    /* Перекрывает линию рамки */
+    padding: 0 4px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #8F939F;
+    pointer-events: none;
+    /* Клик проходит сквозь текст в input */
+    user-select: none;
+    white-space: nowrap;
+}
+
+.field__label::placeholder {
+    color: #8F939F;
+}
+
+/* Иконки внутри полей */
+.field__icon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #8F939F;
+    transition: color 0.2s;
+}
+
+/* =========================================
+   PIXEL-PERFECT: Сброс состояния ошибки
+   ========================================= */
+
+.field--error .field__wrapper {
+    border: 1px solid #CDCFDE;
+    /* Точный цвет рамки по макету */
+    background: #FFFFFF;
+    /* Точный цвет фона по макету */
+}
+
+.field--error .field__error {
+    display: none;
+    /* Полное удаление из потока (без сдвига верстки) */
+}
+
+.field--error .field__label {
+    color: #8F939F;
+    /* Возврат к дефолтному цвету лейбла */
+}
+
+.field--error .field__icon {
+    color: #8F939F;
+    /* Возврат к дефолтному цвету иконки */
+}
+
+/* Сохраняем интерактивные состояния */
+.field--error .field__wrapper:hover,
+.field--error .field__wrapper:focus-within {
+    border-color: #3356D7;
+}
+
+.field--error .field__wrapper:focus-within .field__label {
+    color: #3356D7;
+}

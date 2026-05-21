@@ -1,4 +1,15 @@
 /* Карточка восстановления */
+
+.recovery-page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    gap: 32px;
+}
+
 .recovery-card {
     position: relative;
     background: #fff;
@@ -10,7 +21,7 @@
     box-sizing: border-box;
 }
 
-.recovery-title {
+.recovery-card__title {
     font-weight: 400;
     font-size: 24px;
     line-height: 28px;
@@ -21,17 +32,17 @@
 
 /* Опции восстановления */
 /* Обёртка-карточка */
-.recovery-options {
+.recovery-card__options {
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 28px 32px;
     border: 1px solid rgba(205, 207, 222, 0.5);
     border-radius: 12px;
-    margin-bottom: 28px;
+    margin: 0 0 28px;
 }
 
-.recovery-option {
+.recovery-card__option {
     position: relative;
     display: flex;
     align-items: center;
@@ -39,13 +50,13 @@
     cursor: pointer;
 }
 
-.recovery-option:hover {
+.recovery-card__option:hover {
     border-color: #476BF0;
     background-color: #F8F9FF;
 }
 
 /* Текст с отступом под радио-кнопку */
-.recovery-option-text {
+.recovery-card__option-text {
     position: relative;
     padding-left: 30px;
     /* Место для кастомного кружка */
@@ -57,7 +68,7 @@
 }
 
 /* Внешний круг радио-кнопки */
-.recovery-option-text::before {
+.recovery-card__option-text::before {
     content: "";
     position: absolute;
     left: 0;
@@ -70,52 +81,94 @@
     background: #fff;
 }
 
+/* Внутренняя точка */
+.recovery-card__option-text::after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    /* Точный центр 20px круга */
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 10px;
+    height: 10px;
+    border: 1px solid #CDCFDE;
+    background: #fff;
+    border-radius: 50%;
+}
+
 /* Состояние: ВЫБРАНО */
-.recovery-option input:checked+.recovery-option-text::before {
+.recovery-card__option input:checked+.recovery-card__option-text::before {
     border-color: #476BF0;
+    background: #476BF0;
+    /* Заполняем круг */
+}
+
+.recovery-card__option input:checked+.recovery-card__option-text::after {
+    transform: translate(-50%, -50%) scale(1);
+
+}
+
+/* Hover эффект на радио-кнопку */
+.recovery-card__option:hover .recovery-card__option-text::before {
+    border: 1px solid #3356D7
+}
+
+/* Состояние: ФОКУС (клавиатура) */
+.recovery-card__option input:focus-visible+.recovery-card__option-text::before {
+    outline: 1px solid #A0B4FF;
+    outline-offset: 2px;
 }
 
 
 /* Состояние: ФОКУС (клавиатурная навигация) */
-.recovery-option input:focus-visible+.recovery-option-text::before {
+.recovery-card__option input:focus-visible+.recovery-card__option-text::before {
     outline: 2px solid #476BF0;
     outline-offset: 2px;
 }
 
-.back-link {
+/* Состояние ошибки */
+/* Красная рамка внешнего круга */
+.recovery-card__option--error .recovery-option-text::before {
+    border-color: #F6514B;
+}
+
+/* Перебиваем глобальный синий фокус на красный, чтобы не было визуального конфликта */
+.recovery-card__option--error input:focus-visible+.recovery-card__option-text::before {
+    box-shadow:
+        0 0 0 2px #fff,
+        0 0 0 4px #F6514B;
+    /* Красное кольцо вместо синего */
+    outline: none;
+}
+
+/* Кнопка Вернуться ко входу*/
+.recovery-card__back-link {
     display: flex;
     align-items: center;
-    
+    justify-content: center;
     position: absolute;
+    top: 22px;
+    /* Отступ от верха карточки */
+    left: -24px;
+    /* Отступ от левого края карточки */
     border-radius: 50%;
     width: 48px;
     height: 48px;
-    border: 2px solid #1E222E;
     box-shadow: 2px 2px 20px 0px rgba(16, 26, 59, 0.1);
+    background: #fff;
+    color: #1E222E;
+    border: none;
+    z-index: 5;
 }
 
-/* Кнопка "Продолжить" (активируется при валидной форме) */
-.btn-continue {
-    width: 100%;
-    padding: 14px 0;
-    border: none;
-    border-radius: 60px;
+.recovery-card__back-link:hover,
+.recovery-card__back-link:focus-visible {
+    color: #476BF0;
+}
+
+.recovery-card__back-link:disabled {
     background: #DBDFEB;
     color: #777C9B;
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 400;
+    pointer-events: none;
     cursor: not-allowed;
-    
-}
-
-/* Когда форма валидна (выбран radio), кнопка становится активной */
-.recovery-form:valid .btn-continue {
-    background: #476BF0;
-    color: #fff;
-    cursor: pointer;
-}
-
-.recovery-form:valid .btn-continue:hover {
-    background: #3658D4;
 }

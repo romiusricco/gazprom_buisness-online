@@ -1,17 +1,42 @@
-.btn-primary {
-    width: 100%;
-    background: #476BF0;
-    color: #fff;
-    border: none;
-    border-radius: 60px;
-    padding: 14px 0;
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
     font-size: 16px;
     line-height: 20px;
     font-weight: 400;
+    width: 100%;
+    padding: 14px 24px;
+    border-radius: 60px;
+    border: none;
+    text-decoration: none;
+    background: #476BF0;
+    color: #fff;
     cursor: pointer;
-    margin: 4px 0 24px 0;
+
 }
 
-.btn-primary:hover {
-    background: #003899;
+/* Состояния (общие для всех кнопок) */
+/* Hover состояние */
+.btn:hover {
+    background: #3356D7;
+}
+
+.btn:focus-visible {
+    background: #2143C1;
+    outline: none;
+}
+
+/* Disabled состояние */
+.btn:disabled,
+.btn[aria-disabled="true"] {
+    background: #DBDFEB;
+    color: #777C9B;
+    cursor: not-allowed;
+}
+
+/* Submit button */
+.btn--submit {
+    margin: 4px 0;
 }

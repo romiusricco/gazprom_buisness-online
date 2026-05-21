@@ -1,3 +1,4 @@
+/* ====== Шапка ====== */
 .header {
     display: flex;
     justify-content: space-between;
@@ -5,17 +6,15 @@
     padding: 24px 0;
 }
 
-.award-badge {
+.header__award {
     display: flex;
     align-items: center;
     gap: 12px;
-    /* Отступ между текстом и иконкой */
 }
 
-.award-text {
+.header__award-text {
     display: flex;
     flex-direction: column;
-    /* Строки текста одна под другой */
     text-align: right;
     gap: 2px;
     font-weight: 400;
@@ -23,18 +22,16 @@
     line-height: 16px;
 }
 
-.award-text__top {
+.header__award-text {
     color: #777B87;
 }
 
-.award-text__version {
+.header__award-text-sub {
     color: #A8ACB7;
 }
 
-
-.award-icon {
+.header__award-icon {
     flex-shrink: 0;
-    /* Чтобы иконка не сжималась */
     width: 40px;
     height: 40px;
     background: #fff;
